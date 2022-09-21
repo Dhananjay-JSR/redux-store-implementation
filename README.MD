@@ -14,3 +14,8 @@ Details :-
   2)Support data synchronization between cart and Store Front
   3) Shows TOtal Number of Items on Cart
   4) Dynamically Calculate Cart Total Price
+
+
+
+https://user-images.githubusercontent.com/47073516/191564949-35989d5a-d13a-4fee-8b4b-1f210258c88b.mp4
+
