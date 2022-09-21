@@ -1,13 +1,13 @@
-type  MyStoreProps = Array<ItemStructure>
+export type  MyStoreProps = Array<ItemStructure>
 
 
 export interface ItemStructure {
     ItemName:String;
     ItemsAuthor:String;
-    ItemPrice:Number;
-    RemainingItems:Number;
+    ItemPrice:number;
+    RemainingItems:number;
     ItemsImage:String;
-    ProductID:Number
+    ProductID:number
 }
 
 export const MyStore:MyStoreProps= [
@@ -78,7 +78,7 @@ export const MyStore:MyStoreProps= [
             ItemsImage: 'https://rukminim1.flixcart.com/image/416/416/book/4/0/2/design-patterns-elements-of-reusable-object-oriented-software-original-imaerfy3qddhaep2.jpeg?q=70',
             RemainingItems: 79,
         },{
-            ProductID: 9,
+            ProductID: 10,
             ItemName: 'The Pragmatic Programmer, 20th Anniversary Edition',
             ItemsAuthor: ' Andrew Hunt',
             ItemPrice: 569,
