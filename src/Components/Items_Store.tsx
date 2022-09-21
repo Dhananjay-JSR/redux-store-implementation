@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { MyStore } from "../data/data";
-import { Button, Form, InputGroup } from "react-bootstrap";
+import { Button, Form, InputGroup, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Modal from "react-bootstrap/Modal";
-import type { ItemStructure } from "../data/data";
+import type { ItemStructure } from "../utils/type";
 import { useDispatch } from "react-redux";
 import { AddMore, RemoveItem } from "../ReduxStore/DataSlice";
 import {

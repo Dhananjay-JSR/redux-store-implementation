@@ -6,53 +6,16 @@ import Navbar from "react-bootstrap/Navbar";
 import { Button, Nav } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { MyStoreProps } from "./data/data";
+import type { CartType } from "./utils/type";
 import Cart_Items from "./Components/Cart_Items";
-import CartSlice from "./ReduxStore/CartSlice";
+import { GetTotalCartItem, GetTotalCartPrice } from "./utils/helperFn";
 interface IRootState {
-  Cart: Array<{
-    ItemName: String;
-    ItemPrice: number;
-    ItemsImage: String;
-    ProductID: number;
-    Ordered: number;
-  }>;
+  Cart: Array<CartType>;
   Data: MyStoreProps;
 }
-function getTotalCartItem(
-  Cart: Array<{
-    ItemName: String;
-    ItemPrice: number;
-    ItemsImage: String;
-    ProductID: number;
-    Ordered: number;
-  }>
-) {
-  let num = 0;
-  Cart.map((e) => {
-    num = num + e.Ordered;
-  });
-  return num;
-}
-function GetTOtalCartPrice(
-  Cart: Array<{
-    ItemName: String;
-    ItemPrice: number;
-    ItemsImage: String;
-    ProductID: number;
-    Ordered: number;
-  }>
-) {
-  let num = 0;
-  Cart.map((items) => {
-    if (items.Ordered != 0) {
-      num = num + items.ItemPrice * items.Ordered;
-    }
-  });
-  return num;
-}
+
 function App() {
   const [ShowCart, setShowCart] = useState(false);
-
   const MyStore = useSelector((state: IRootState) => state.Data);
   const Cart = useSelector((state: IRootState) => state.Cart);
   return (
@@ -77,7 +40,7 @@ function App() {
                 type="button"
                 className="btn btn-primary btn-lg"
                 onClick={() => {
-                  if (getTotalCartItem(Cart) == 0) {
+                  if (GetTotalCartItem(Cart) == 0) {
                     window.alert(
                       "Nothing to Show in Cart Please Add Some Productss"
                     );
@@ -86,15 +49,14 @@ function App() {
                   }
                 }}
               >
-                {" "}
-                <div>Cart Items :- {getTotalCartItem(Cart)}</div>
+                <div>Cart Items :- {GetTotalCartItem(Cart)}</div>
               </Button>
             </Nav.Link>
           </Nav.Item>
         </Nav>
       </Navbar>
       {ShowCart ? (
-        getTotalCartItem(Cart) == 0 ? (
+        GetTotalCartItem(Cart) == 0 ? (
           setShowCart((pev) => !pev)
         ) : (
           <div className=" d-flex align-items-center justify-content-center ">
@@ -121,7 +83,7 @@ function App() {
                   }}
                   className="text-danger"
                 >
-                  Total Price:- Rs {GetTOtalCartPrice(Cart)}
+                  Total Price:- Rs {GetTotalCartPrice(Cart)}
                 </h1>
               </>
             </div>

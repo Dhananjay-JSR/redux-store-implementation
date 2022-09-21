@@ -1,15 +1,5 @@
+import type { ItemStructure } from "../utils/type"
 export type  MyStoreProps = Array<ItemStructure>
-
-
-export interface ItemStructure {
-    ItemName:String;
-    ItemsAuthor:String;
-    ItemPrice:number;
-    RemainingItems:number;
-    ItemsImage:String;
-    ProductID:number
-}
-
 export const MyStore:MyStoreProps= [
     {
         ProductID: 1,

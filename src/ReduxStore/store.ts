@@ -1,7 +1,6 @@
 import { configureStore ,combineReducers} from '@reduxjs/toolkit'
 import CartSlice from './CartSlice'
 import DataSlice from './DataSlice'
-// @ts-ignore
 import storage from 'redux-persist/lib/storage'
 import {
   persistStore,
@@ -13,7 +12,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
-import thunk from 'redux-thunk';
 
 
 const persistConfig = {

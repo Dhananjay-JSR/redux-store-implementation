@@ -1,19 +1,14 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { AddMore, RemoveItem } from "../ReduxStore/DataSlice";
+import type { CartBuilderPropType } from "../utils/type";
 import { useDispatch } from "react-redux";
 import {
   AddMore as AddItemToCart,
   RemoveItem as RemoveItemToCart,
 } from "../ReduxStore/CartSlice";
-interface PropType {
-  ItemName: String;
-  ItemPrice: number;
-  ItemsImage: String;
-  ProductID: number;
-  Ordered: number;
-}
-function Cart_Items(props: PropType) {
+
+function Cart_Items(props: CartBuilderPropType) {
   const dispatch = useDispatch();
   return (
     <div className="d-flex m-5">
