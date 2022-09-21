@@ -5,6 +5,7 @@ import Items_Store from './Components/Items_Store'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav } from 'react-bootstrap';
+import {MyStore} from './data/data'
 
 function App() {
 
@@ -32,9 +33,12 @@ function App() {
         </Nav.Item>
       </Nav>
       </Navbar>
-    
+    {
+      MyStore.map(products=>{
+        return <Items_Store ItemName={products.ItemName} ItemPrice={products.ItemPrice} ItemsAuthor={products.ItemsAuthor} ItemsImage={products.ItemsImage} ProductID={products.ProductID} RemainingItems={products.RemainingItems}/>
+      })
+    }
     </>
   )
 }
-
 export default App

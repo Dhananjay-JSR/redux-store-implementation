@@ -10,18 +10,18 @@ function Items_Store(props:ItemStructure) {
 const [show, setShow] = useState(false);
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
-
-
   return (
     <>
     <div className='m-3 h-100 d-flex align-items-center justify-content-center'>
-    <img src="https://rukminim1.flixcart.com/image/416/416/k6v2ykw0/book/2/4/0/designing-data-intensive-applications-original-imafp873jeq3z7fr.jpeg?q=70" height={400} width={300} className="rounded float-left" alt="..."/>
-    <div>
-
-    <div>Item Name :- {props.ItemName}</div>
+    <img src={props.ItemsImage as string} height={400} width={300} className="rounded float-left" alt="..."/>
+    <div className='m-3'>
+    <p className='text-success'>Item Name :- {props.ItemName}</p>
     <div>Author Name :- Kleppmann Martin {props.ItemsAuthor}</div>
-    <div>Pricing :- Rs {props.ItemPrice.toString()}</div>
-    <div>Add to Card</div>
+    <div className='text-white bg-dark'>Pricing :- Rs {props.ItemPrice.toString()}</div>
+    <div className='text-white bg-dark'>Remaining Set:- {props.RemainingItems.toString()}</div>
+    <br/>
+    <div className='text-danger'>Add to Cart</div>
+    <br/>
     <Button className='m-3'>Remove Item -</Button>
     <Button className='m-3' onClick={handleShow}>Insert Custom Amount </Button>
     <Button className='m-3'>Add Item + </Button>
@@ -31,7 +31,7 @@ const handleShow = () => setShow(true);
 
     <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>{props.ItemName} </Modal.Title>
         </Modal.Header>
         <Modal.Body> <InputGroup className="mb-3">
         <Form.Control
