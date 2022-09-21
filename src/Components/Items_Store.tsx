@@ -33,8 +33,8 @@ function Items_Store(props: ItemStructure & { orderedAmt: number }) {
           <div className="text-white bg-dark">
             Pricing :- Rs {props.ItemPrice.toString()}
           </div>
-          <div className="text-white bg-dark">
-            Remaining Set:- {props.RemainingItems.toString()}
+          <div className="text-dark bg-warning">
+            Items Remaining :- {props.RemainingItems.toString()}
           </div>
           <br />
           <div className="text-danger">Add to Cart</div>
